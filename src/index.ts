@@ -7,7 +7,7 @@ export class ValidationPlugin {
 		const validation = validate(req.body, target[method].validations);
 
 		if (validation)	{
-			res.status(this.params.status || 400).send({
+			res.status(this.params.status || 422).send({
 				error: {
 					message: this.params.message || "validation error",
 					parameters: validation
