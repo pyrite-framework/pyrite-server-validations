@@ -1,6 +1,6 @@
 # pyrite-server-validations
 
-- more information about object config in [[validatejs|https://validatejs.org/]]
+- More information about object config in [[validatejs|https://validatejs.org/]]
 
 ## Install
 
