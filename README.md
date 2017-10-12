@@ -1,5 +1,7 @@
 # pyrite-server-validations
 
+- more information about object config in [[validatejs|https://validatejs.org/]]
+
 ## Install
 
 - Decorators feature has to be enabled.
@@ -33,7 +35,7 @@ server.listen(() => {
   
 ```typescript
 import { Route, Post, Body } from "pyrite-server";
-import { ValidationPlugin } from "pyrite-server-validations";
+import { Validation } from "pyrite-server-validations";
 
 const createValidation = {
   username: {
@@ -55,7 +57,7 @@ let index = 0;
 class Users {
 
   @Post("/")
-  @Validate(createValidation)
+  @Validation(createValidation)
   createUser(@Body user) {
     user.id = index++;
 
