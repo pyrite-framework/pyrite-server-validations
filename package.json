@@ -1,7 +1,7 @@
 {
   "name": "pyrite-server-validations",
   "description": "Pyrite Server Validations Plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Fabio Garcia",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",

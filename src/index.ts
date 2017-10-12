@@ -1,7 +1,11 @@
 const validate = require("validate.js");
 
 export class ValidationPlugin {
-	constructor(private params: any = {}) {}
+	type: string;
+
+	constructor(private params: any = {}) {
+		this.type = "middleware";
+	}
 
 	run(req: any, res: any, target: any, method: any): Boolean {
 		const validation = validate(req.body, target[method].validations);
