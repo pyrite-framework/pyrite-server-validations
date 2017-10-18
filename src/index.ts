@@ -2,13 +2,14 @@ const validate = require("validate.js");
 
 export class ValidationPlugin {
 	type: string;
+	param: string;
 
 	constructor(private params: any = {}) {
 		this.type = "middleware";
 	}
 
-	run(req: any, res: any, target: any, method: any): Boolean {
-		const validation = validate(req.body, target[method].validations);
+	run(req: any, res: any, route: any): Boolean {
+		const validation = validate(req.body, route.target[route.method.methodName].validations);
 
 		if (validation)	{
 			res.status(this.params.status || 422).send({
@@ -22,6 +23,12 @@ export class ValidationPlugin {
 		}
 
 		return false;
+	}
+
+	add(configParam: any, route: any): void {
+		const validations = route.target[route.method.methodName].validations;
+
+		if (validations) configParam.validations = validations;
 	}
 }
 
