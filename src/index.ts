@@ -33,7 +33,7 @@ export class ValidationPlugin {
 }
 
 export function Validation(validations: any): Function {
-  return function(target: any, method: string, descriptor: PropertyDescriptor): void {
-    target[method].validations = validations;
-  };
+	return function(target: any, method: string, descriptor: PropertyDescriptor): void {
+		target[method].validations = validations;
+	};
 }

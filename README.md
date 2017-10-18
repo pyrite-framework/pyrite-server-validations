@@ -16,10 +16,10 @@ npm install pyrite-server-validations
 ### main.js
 
 ```typescript
-import { Server } from "pyrite-server";
+import { PyriteServer } from "pyrite-server";
 import { ValidationPlugin } from "pyrite-server-validations";
 
-const server = new Server({
+const server = new PyriteServer({
   port: 8000,
   routes: "/routes",
   plugins: [new ValidationPlugin()]
@@ -54,7 +54,7 @@ const users = [];
 let index = 0;
 
 @Route("/users")
-class Users {
+export class Users {
 
   @Post("/")
   @Validation(createValidation)
